@@ -1,0 +1,60 @@
+<?php 
+// include dos arquivox
+include_once './include/logado.php';
+include_once './include/conexao.php';
+include_once './include/header.php';
+?>
+
+<main>
+
+  <div class="container">
+      <h1>Lista de Funcionários</h1>
+      <a href="./salvar-funcionarios.php" class="btn btn-add">Incluir</a> 
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Setor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+    
+        <?php
+          $sql = "SELECT  f.FuncionarioID,
+                          f.Nome AS 'funcionarios',
+                          c.Nome AS 'cargos',
+                          s.Nome AS 'setor'
+                FROM funcionarios AS f
+                JOIN cargos AS c ON f.CargoID = c.CargoID
+                JOIN setor AS s ON f.SetorID = s.SetorID
+                ";
+         
+          $result = mysqli_query($conn, $sql);
+ 
+          while ($row = mysqli_fetch_assoc($result)) {
+            echo '<tr>
+            <td>'. $row["FuncionarioID"] . ' </td>
+            <td>'. $row["funcionarios"].'</td>
+            <td>'.$row["cargos"].'</td>
+            <td>'.$row["setor"].'</td>
+            <td>
+              <a href="#" class="btn btn-edit">Editar</a>
+              <a href="#" class="btn btn-delete">Excluir</a>
+            </td>
+          </tr>';
+         
+          }
+          ?>
+   
+
+        </tbody>
+      </table>
+    </div>
+
+<?php 
+  // include dos arquivox
+  include_once './include/footer.php';
+  ?>
