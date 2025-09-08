@@ -1,15 +1,15 @@
-<?php 
+<?php
 // include dos arquivox
 include_once './include/logado.php';
 include_once './include/conexao.php';
 include_once './include/header.php';
 ?>
-
+ 
 <main>
-
+ 
   <div class="container">
       <h1>Lista de Funcionários</h1>
-      <a href="./salvar-funcionarios.php" class="btn btn-add">Incluir</a> 
+      <a href="./salvar-funcionarios.php" class="btn btn-add">Incluir</a>
       <table>
         <thead>
           <tr>
@@ -21,7 +21,7 @@ include_once './include/header.php';
           </tr>
         </thead>
         <tbody>
-    
+   
         <?php
           $sql = "SELECT  f.FuncionarioID,
                           f.Nome AS 'funcionarios',
@@ -49,12 +49,13 @@ include_once './include/header.php';
           }
           ?>
    
-
+ 
         </tbody>
       </table>
     </div>
-
-<?php 
+ 
+<?php
   // include dos arquivox
   include_once './include/footer.php';
   ?>
+ 

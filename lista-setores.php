@@ -1,15 +1,15 @@
-<?php 
+<?php
 // include dos arquivox
 include_once './include/logado.php';
 include_once './include/conexao.php';
 include_once './include/header.php';
 ?>
   <main>
-
+ 
     <div class="container">
         <h1>Lista de Setores</h1>
         <a href="./salvar-setores.php" class="btn btn-add">Incluir</a>
-        
+       
         <table>
           <thead>
             <tr>
@@ -21,7 +21,7 @@ include_once './include/header.php';
             </tr>
           </thead>
           <tbody>
-
+ 
           <?php
             $sql = "SELECT * FROM setor";
             $result = mysqli_query($conn, $sql);
@@ -41,14 +41,14 @@ include_once './include/header.php';
             }
           ?>
  
-            
+           
           </tbody>
         </table>
       </div>
-
+ 
   </main>
-
-  <?php 
+ 
+  <?php
   // include dos arquivox
   include_once './include/footer.php';
   ?>

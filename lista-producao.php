@@ -1,14 +1,14 @@
-<?php 
+<?php
 // include dos arquivox
 include_once './include/logado.php';
 include_once './include/conexao.php';
 include_once './include/header.php';
 ?>
   <main>
-
+ 
     <div class="container">
         <h1>Lista de Produções</h1>
-        <a href="./salvar-producao.php" class="btn btn-add">Incluir</a> 
+        <a href="./salvar-producao.php" class="btn btn-add">Incluir</a>
         <table>
           <thead>
             <tr>
@@ -40,16 +40,7 @@ include_once './include/header.php';
                 <a href="#" class="btn btn-delete">Excluir</a>
               </td>
             </tr>
-            
+           
           </tbody>
         </table>
       </div>
-
-
-   
-  </main>
-
-  <?php 
-  // include dos arquivox
-  include_once './include/footer.php';
-  ?>
