@@ -25,14 +25,13 @@ include_once './include/header.php';
   
     $sql = "SELECT * FROM cargos";
 
-    $result = mysqli_query($conn, $sql);
+    $resultado = mysqli_query($conexao, $sql);
 
-    while($row = mysqli_fetch_assoc($result)){
+    while($row = mysqli_fetch_assoc($resultado)){
          echo '<tr>';
          echo '<td>'.$row["CargoID"].'</td>';
          echo '<td>'.$row["Nome"].'</td>';
          echo '<td>'.$row["TetoSalarial"].'</td>';
-         echo '<td>Ações</td>';
          echo '<td>';
          echo '<a href="salvar-cargos.php?id=' . $row["CargoID"] . '" class="btn btn-edit">Editar</a>';
          echo '<a href="#" class="btn btn-delete">Excluir</a>';

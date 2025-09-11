@@ -1,20 +1,9 @@
 <?php
-
-$cargos = "cargos"; 
-$categorias = "categorias"; 
-$clientes = "clientes"; 
-$funcionarios = "funcionarios"; 
-$producao = "producao";
-$produtos = "produtos";
-$setor = "setor";
-
-// Cria a conexão
-$conn = new mysqli($cargos, $categorias, $clientes, $funcionarios);
-
-// Checa a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
-
-echo "Conexão bem-sucedida!";
-?>
+//constantes de conexao com o banco
+define('DBHOST', 'localhost'); // servidor do banco de dados
+define('DBUSER', 'root'); // usuário do mysql
+define('DBPASS', ''); //senha de acesso ao mysql
+define('DBBASE', 'empresa'); // nome da base de dados do banco
+ 
+//variavel de conexao com o banco de dados
+$conexao = mysqli_connect(DBHOST,DBUSER,DBPASS,DBBASE);

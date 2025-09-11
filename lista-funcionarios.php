@@ -32,9 +32,9 @@ include_once './include/header.php';
                 JOIN setor AS s ON f.SetorID = s.SetorID
                 ";
          
-          $result = mysqli_query($conn, $sql);
+          $resultado = mysqli_query($conexao, $sql);
  
-          while ($row = mysqli_fetch_assoc($result)) {
+          while ($row = mysqli_fetch_assoc($resultado)) {
             echo '<tr>
             <td>'. $row["FuncionarioID"] . ' </td>
             <td>'. $row["funcionarios"].'</td>

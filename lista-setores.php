@@ -24,15 +24,15 @@ include_once './include/header.php';
  
           <?php
             $sql = "SELECT * FROM setor";
-            $result = mysqli_query($conn, $sql);
+            $resultado = mysqli_query($conexao, $sql);
  
-            while($row = mysqli_fetch_assoc($result)){
+            while($row = mysqli_fetch_assoc($resultado)){
               echo '<tr>
               <td>'.$row["SetorID"].'</td>
               <td>'.$row["Nome"].'</td>
               <td>'.$row["Andar"].'</td>
               <td>'.$row["Cor"].'</td>
-              <td>Ações</td>
+              <td></td>
               <td>
                 <a href="salvar-setores.php?id=" class="btn btn-edit">Editar</a>
                 <a href="#" class="btn btn-delete">Excluir</a>
