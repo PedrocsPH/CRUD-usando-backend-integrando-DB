@@ -3,8 +3,8 @@
 include_once './include/logado.php';
 include_once './include/conexao.php';
 include_once './include/header.php';
- 
 ?>
+
   <main>
  
     <div class="container">
@@ -37,8 +37,13 @@ include_once './include/header.php';
          echo '<a href="#" class="btn btn-delete">Excluir</a>';
          echo '</td>';
          echo '</tr>';
+     
 }
 ?>
+
+
+     l
+
     </tbody>
     </table>
   </div>

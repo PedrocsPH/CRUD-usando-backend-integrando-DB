@@ -8,7 +8,7 @@ $acao = $_GET['acao'];
 
 // validacao
 switch ($acao) {
-    case 'value':
+    case 'excluir':
         # code...
         break;
     

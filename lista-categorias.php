@@ -61,7 +61,7 @@ include_once './include/header.php';
               <td></th>
               <td>
                 <a href="salvar-cargos.php?id=" class="btn btn-edit">Editar</a>
-                <a href="#" class="btn btn-delete">Excluir</a>
+                <a href="action/categorias.php?id="'.$row['CategoriaID'].'&acao=excluir" class="btn btn-delete">excluir</a>
               </td>
               </tr>';
  
