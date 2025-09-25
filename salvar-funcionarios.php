@@ -24,9 +24,35 @@ include_once './include/header.php';
           <input type="text" placeholder="RG">
           <select>
             <option value="">Cargo</option>
+
+            <?php
+              $sql = "SELECT Nome FROM cargos";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0){
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo '<option value="">'.$row["Nome"].'</option>';
+                } 
+              } else {
+                echo '<option value="">0 resultados encontrados</option>';
+              }
+            ?>
+
           </select>
+
           <select>
             <option value="">Setor</option>
+            <?php
+              $sql = "SELECT Nome FROM setor";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0){
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo '<option value="">'.$row["Nome"].'</option>';
+                } 
+              } else {
+                echo '<option value="">0 resultados encontrados</option>';
+              }
+            ?>
+
           </select>
           <button type="submit">Salvar</button>
         </form>

@@ -18,52 +18,29 @@ include_once './include/header.php';
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Dado A</td>
- 
-              <td>
-                <a href="#" class="btn btn-edit">Editar</a>
-                <a href="#" class="btn btn-delete">Excluir</a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Dado B</td>
-              <td>
-                <a href="#" class="btn btn-edit">Editar</a>
-                <a href="#" class="btn btn-delete">Excluir</a>
-              </td>
-            </tr>
-           
-          </tbody>
-        </table>
-      </div>
- 
- 
-   
-  </main>
- 
-  <?php
-  // include dos arquivox
-  include_once './include/footer.php';
-  ?>
- 
+          
 <?php
-            $sql = "SELECT * FROM cargos";
-            $result = mysqli_query($conexao, $sql);
+            $sql = 'SELECT * FROM categorias';
+            $resultado = mysqli_query($conexao,$sql);
  
-            while($row = mysqli_fetch_assoc($resultado)){
-              echo '<tr>
-              <td>'.$row["CargoID"].'</th>
-              <td>'.$row["Nome"].'</th>
-              <td>'.$row["TetoSalarial"].'</th>
-              <td></th>
+            while( $dado = mysqli_fetch_assoc($resultado)) {
+              ?>
+              <tr>
+              <td> <?php echo $dado['CategoriaID'];?></td>
+              <td> <?php echo $dado['Nome'];?></td>
+              
               <td>
-                <a href="salvar-cargos.php?id=" class="btn btn-edit">Editar</a>
-                <a href="action/categorias.php?id="'.$row['CategoriaID'].'&acao=excluir" class="btn btn-delete">excluir</a>
+                <a href="salvar-cargos.php?id=<?php echo $dado['CategoriaID']?>" class="btn btn-edit">Editar</a>
+                <a href="./action/categorias.php?&acao=excluir&id=<?php echo $dado['CategoriaID']?>" class="btn btn-delete">Excluir</a>
               </td>
-              </tr>';
- 
-            }
+              </tr>
+              <?php
+              }
             ?>
+
+</main>
+
+<?php
+// include dos arquivos
+include_once './include/footer.php';
+?>

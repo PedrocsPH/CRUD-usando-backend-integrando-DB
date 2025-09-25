@@ -28,7 +28,7 @@ include_once './include/header.php';
                           c.Nome AS 'cargos',
                           s.Nome AS 'setor'
                 FROM funcionarios AS f
-                JOIN cargos AS c ON f.CargoID = c.CargoID
+                JOIN cargos AS c ON f.CargoID = c.CargoID 
                 JOIN setor AS s ON f.SetorID = s.SetorID
                 ";
          

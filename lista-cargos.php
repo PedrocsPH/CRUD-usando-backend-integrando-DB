@@ -7,6 +7,7 @@ include_once './include/header.php';
 
   <main>
  
+
     <div class="container">
         <h1>Lista de Cargos</h1>
         <a href="./salvar-cargos.php" class="btn btn-add">Incluir</a>
@@ -22,8 +23,7 @@ include_once './include/header.php';
           <tbody>
            
           <?php
-  
-    $sql = "SELECT * FROM cargos";
+          $sql = "SELECT * FROM cargos";
 
     $resultado = mysqli_query($conexao, $sql);
 
@@ -42,7 +42,7 @@ include_once './include/header.php';
 ?>
 
 
-     l
+
 
     </tbody>
     </table>
