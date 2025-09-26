@@ -1,9 +1,15 @@
 <?php
 //constantes de conexao com o banco
-define('DBHOST', 'localhost'); // servidor do banco de dados
-define('DBUSER', 'root'); // usuário do mysql
-define('DBPASS', ''); //senha de acesso ao mysql
-define('DBBASE', 'empresa'); // nome da base de dados do banco
- 
-//variavel de conexao com o banco de dados
-$conexao = mysqli_connect(DBHOST,DBUSER,DBPASS,DBBASE);
+define('host', 'localhost'); // servidor do banco de dados
+define('user', 'root'); // usuário do mysql
+define('pass', ''); //senha de acesso ao mysql
+define('db', 'empresa'); // nome da base de dados do banco
+
+$conn = mysqli_connect(host, user, pass, db);
+
+if(!$conn) {
+    die("Falha na conexão: " . mysqli_connect_error());
+
+}
+
+?>

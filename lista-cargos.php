@@ -23,26 +23,23 @@ include_once './include/header.php';
           <tbody>
            
           <?php
+
           $sql = "SELECT * FROM cargos";
+          $result = mysqli_query($conn, $sql);
 
-    $resultado = mysqli_query($conexao, $sql);
+    while($row = mysqli_fetch_assoc($result)){
+      echo '<tr>
+      <td>'.$row["CargoID"].'</th>
+      <td>'.$row["Nome"].'</th>
+      <td> R$ '.$row["TetoSalarial"].'</th>
+     <td>
+      <a href="salvar-cargos.php?id=" class="btn btn-edit">Editar</a>
+      <a href="#" class="btn btn-delete">Excluir</a>
+     </td>
+     </tr>';
 
-    while($row = mysqli_fetch_assoc($resultado)){
-         echo '<tr>';
-         echo '<td>'.$row["CargoID"].'</td>';
-         echo '<td>'.$row["Nome"].'</td>';
-         echo '<td>'.$row["TetoSalarial"].'</td>';
-         echo '<td>';
-         echo '<a href="salvar-cargos.php?id=' . $row["CargoID"] . '" class="btn btn-edit">Editar</a>';
-         echo '<a href="#" class="btn btn-delete">Excluir</a>';
-         echo '</td>';
-         echo '</tr>';
-     
-}
-?>
-
-
-
+    }
+     ?>
 
     </tbody>
     </table>

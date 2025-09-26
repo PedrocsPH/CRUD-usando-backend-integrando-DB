@@ -21,22 +21,26 @@ include_once './include/header.php';
           
 <?php
             $sql = 'SELECT * FROM categorias';
-            $resultado = mysqli_query($conexao,$sql);
+            $result = mysqli_query($conn,$sql);
  
-            while( $dado = mysqli_fetch_assoc($resultado)) {
-              ?>
+            while($row = mysqli_fetch_assoc($result)) {
+              echo '<tr>
               <tr>
-              <td> <?php echo $dado['CategoriaID'];?></td>
-              <td> <?php echo $dado['Nome'];?></td>
+              <td>'.$row['CategoriaID'].'</td>
+              <td>'.$row['Nome'].'</td>
+              <td>ações</td>
               
               <td>
-                <a href="salvar-cargos.php?id=<?php echo $dado['CategoriaID']?>" class="btn btn-edit">Editar</a>
-                <a href="./action/categorias.php?&acao=excluir&id=<?php echo $dado['CategoriaID']?>" class="btn btn-delete">Excluir</a>
+                <a href="salvar-cargos.php?id=" class="btn btn-edit">Editar</a>
+                <a href="#" class="btn btn-delete">Excluir</a>
               </td>
-              </tr>
-              <?php
+              </tr>';
+            
               }
             ?>
+            </tbody>
+            </table>
+            </div>
 
 </main>
 
